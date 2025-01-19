@@ -67,20 +67,20 @@ class VehicalGalleriesController extends Controller
         {
             return response()->json($validator->getMessageBag()->toArray(), 422);
         }
-        try{
+        // try{
             foreach ($request->get('files') as $file) {
                 $photo=new VehicalGallery();
                 $photo->vehical_id = $vehical_id;
-                $photo->file=$file['file'];
+                $photo->file_name=$file['file'];
                 $photo->file_type=substr($file['type'], 0,strpos($file['type'], "/"));
                 $photo->save();
             }
             return response()->json(['success','VehicalGallery created successfully.'], 200);
-        }
-        catch(\Exception $e)
-        {
-            return response()->json(["error" => "Something went wrong, Please try after sometime."], 422);
-        }
+        // }
+        // catch(\Exception $e)
+        // {
+        //     return response()->json(["error" => "Something went wrong, Please try after sometime."], 422);
+        // }
     }
 
     /**

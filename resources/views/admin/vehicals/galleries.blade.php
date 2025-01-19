@@ -104,10 +104,10 @@
   							success: function (data) {
 					            location.reload();
 					        },
-					        error: function (error) {
-					            alert("Something went wrong, Please try again after sometime.");
-					       		location.reload();
-					        }
+					        // error: function (error) {
+					        //     alert("Something went wrong, Please try again after sometime.");
+					       	// 	// location.reload();
+					        // }
 		            	});
 		            },
 		            Error: function(up, err) {

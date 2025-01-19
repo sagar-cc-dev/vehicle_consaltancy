@@ -19,6 +19,20 @@
 </div>
 <!-- Breadcrumb Begin -->
 
+<!-- Flash Message Section -->
+@if (session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+@if (session('error'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ session('error') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+
 <!-- Register Section Begin -->
 <section class="contact spad">
     <div class="container">
@@ -27,42 +41,47 @@
                 <div class="contact__form">
                     <form method="POST" action="{{ route('update.profile') }}">
                         @csrf
-                        <label class="form-group"><b><h5>first_name</h5></b></label>
-                            <input id="first_name" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') ? old('first_name') : $user->first_name  }}" required autocomplete="first_name" autofocus>
-                            @error('first_name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                            <label class="form-group"><b><h5>last_name</h5></b></label>
-                            <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') ? old('last_name') : $user->last_name }}" required autocomplete="last_name" autofocus>
-                            @error('last_name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                            <label class="form-group"><b><h5>Email</h5></b></label>
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') ? old('email') : $user->email }}" required autocomplete="email" autofocus>
-                            @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                            <label class="form-group"><b><h5>phone</h5></b></label>
-                            <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') ? old('phone') : $user->phone }}" required autocomplete="phone" autofocus>
-                            @error('phone')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                            <label class="form-group"><b><h5>password</h5></b></label>
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Type to Change Password" autocomplete="new-password">
-                            @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                            <button type="submit" class="site-btn">Update</button>
+                        <label class="form-group"><b><h5>First Name</h5></b></label>
+                        <input id="first_name" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name', $user->first_name) }}" required autocomplete="first_name" autofocus>
+                        @error('first_name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+
+                        <label class="form-group"><b><h5>Last Name</h5></b></label>
+                        <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name', $user->last_name) }}" required autocomplete="last_name" autofocus>
+                        @error('last_name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+
+                        <label class="form-group"><b><h5>Email</h5></b></label>
+                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email', $user->email) }}" required autocomplete="email" autofocus>
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+
+                        <label class="form-group"><b><h5>Phone</h5></b></label>
+                        <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone', $user->phone) }}" required autocomplete="phone" autofocus>
+                        @error('phone')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+
+                        <label class="form-group"><b><h5>Password</h5></b></label>
+                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Type to Change Password" autocomplete="new-password">
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+
+                        <button type="submit" class="site-btn">Update</button>
                     </form>
                 </div>
             </div>
