@@ -21,9 +21,10 @@
                             <thead>
                                 <tr>
                                     <th class="table-plus datatable-nosort">No</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
+                                    <th>Name</th>
+                                    <th>Contact</th>
                                     <th>Email</th>
+                                    <th>Status</th>
                                     <th class="datatable-nosort">Action</th>
                                 </tr>
                             </thead>

@@ -11,17 +11,6 @@ use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
-
     use RegistersUsers;
 
     /**
@@ -52,9 +41,20 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'first_name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
-            'phone' => ['required', 'numeric', 'max:10'],
+            'phone' => ['required', 'numeric', 'digits:10', 'unique:users', 'regex:/^[0-9]{10}$/'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ], [
+            // Custom validation messages
+            'phone.required' => 'The phone number is required.',
+            'phone.numeric' => 'The phone number must be a valid number.',
+            'phone.digits' => 'The phone number must be 10 digits.',
+            'phone.unique' => 'This phone number is already taken.',
+            'email.required' => 'The email address is required.',
+            'email.unique' => 'This email is already registered.',
+            'password.required' => 'The password is required.',
+            'password.confirmed' => 'The password confirmation does not match.',
+            'password.min' => 'The password must be at least 8 characters.',
         ]);
     }
 

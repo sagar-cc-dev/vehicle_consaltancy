@@ -16,8 +16,9 @@ var userTable = $('#UserTable').DataTable({
     columns: [
         {data: 'id', name: 'id',orderable: true,width:'4%'},
         {data: 'first_name', name: 'first_name',orderable: true},
-        {data: 'last_name', name: 'last_name',orderable: true},
+        {data: 'phone', name: 'phone',orderable: true},
         {data: 'email', name: 'email',orderable: true},
+        {data: 'status', name: 'status',orderable: true},
         {data: 'action', name: 'action', orderable: false,width:'10%'},
     ],
     language: {
@@ -38,9 +39,6 @@ var userTable = $('#UserTable').DataTable({
 $('#user_filter').change(function (e) {
     userTable.page.len($(this).val()).draw();
 });
-
-// Sort by columns 1 and 2 and redraw
-userTable.order( [ 0, 'desc' ]).draw();
 
 $.fn.dataTable.ext.errMode = 'none';
 userTable.on('error', function () {

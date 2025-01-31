@@ -21,19 +21,32 @@ class DatabaseSeeder extends Seeder
     {
         User::create([
             'role' => 'admin',
-        	'first_name' => 'Administrator',
-            'last_name' => '',
-        	'email' => 'admin@admin.com',
+        	'first_name' => 'Ritesh',
+            'last_name' => 'Patel',
+            'phone' => '7016590780',
+        	'email' => 'admin@hvsc.com',
             'password' => bcrypt('admin123'),
             'email_verified_at' => now(),
             'remember_token' => Str::random(10),
         ]);
         User::create([
             'role' => 'customer',
-        	'first_name' => 'User',
-            'last_name' => 'Test',
-        	'email' => 'test@user.com',
+        	'first_name' => 'Ronak',
+            'last_name' => 'Patel',
+            'phone' => '9664725001',
+        	'email' => 'user@hvsc.com',
             'password' => bcrypt('user123'),
+            'email_verified_at' => now(),
+            'remember_token' => Str::random(10),
+        ]);
+        User::create([
+            'role' => 'customer',
+        	'first_name' => 'Kevin',
+            'last_name' => 'Rangpariya',
+            'phone' => '7016587896',
+        	'email' => 'user1@hvsc.com',
+            'password' => bcrypt('user123'),
+            'status' => 0,
             'email_verified_at' => now(),
             'remember_token' => Str::random(10),
         ]);

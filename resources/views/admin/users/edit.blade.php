@@ -11,23 +11,27 @@
   <div class="modal_form">
   <div class="form-group">
       <lable>First Name</lable>
-      <input type="text" name="first_name" class="form-control" placeholder="First Name" required value="{!! $user->first_name !!}">
+      <input type="text" name="first_name" class="form-control" value="{!! $user->first_name !!}">
     </div>
     <div class="form-group">
       <lable>Last Name</lable>
-      <input type="text" name="last_name" class="form-control" placeholder="Last Name" required value="{!! $user->last_name !!}">
-    </div>
-    <div class="form-group">
-      <lable>Company Name</lable>
-      <input type="text" name="company_name" class="form-control" placeholder="Company Name" required value="{!! $user->company_name !!}">
+      <input type="text" name="last_name" class="form-control" value="{!! $user->last_name !!}">
     </div>
     <div class="form-group">
       <lable>Phone</lable>
-      <input type="number" name="phone" class="form-control" placeholder="Phone" required value="{!! $user->phone !!}">
+      <input type="number" name="phone" class="form-control" value="{!! $user->phone !!}">
     </div>
     <div class="form-group">
         <lable>Email</lable>
-        <input type="email" name="email" class="form-control" placeholder="Name" required value="{!! $user->email !!}">
+        <input type="email" name="email" class="form-control" value="{!! $user->email !!}">
+    </div>
+    <div class="form-group">
+      <lable>password</lable>
+      <input type="password" name="password" class="form-control">
+    </div>
+    <div class="form-group">
+      <lable>Confirm Password</lable>
+      <input type="password" name="password_confirmation" class="form-control">
     </div>
   </div>
 </div>

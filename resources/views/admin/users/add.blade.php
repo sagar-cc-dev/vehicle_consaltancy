@@ -11,27 +11,27 @@
   <div class="modal_form">
     <div class="form-group">
       <lable>First Name</lable>
-      <input type="text" name="first_name" class="form-control" placeholder="First Name" required>
+      <input type="text" name="first_name" class="form-control">
     </div>
     <div class="form-group">
       <lable>Last Name</lable>
-      <input type="text" name="last_name" class="form-control" placeholder="Last Name" required>
+      <input type="text" name="last_name" class="form-control">
     </div>
     <div class="form-group">
       <lable>Phone</lable>
-      <input type="number" name="phone" class="form-control" placeholder="Phone" required>
+      <input type="number" name="phone" class="form-control">
     </div>
     <div class="form-group">
         <lable>email</lable>
-        <input type="email" name="email" class="form-control" placeholder="Email" required email>
+        <input type="email" name="email" class="form-control">
       </div>
       <div class="form-group">
         <lable>password</lable>
-        <input type="password" name="password" class="form-control" placeholder="********" required>
+        <input type="password" name="password" class="form-control">
       </div>
       <div class="form-group">
         <lable>Confirm Password</lable>
-        <input type="password_confirmation" name="password_confirmation" class="form-control" placeholder="********" required>
+        <input type="password" name="password_confirmation" class="form-control">
       </div>
   </div>
 </div>
